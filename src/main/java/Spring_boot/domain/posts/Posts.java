@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Getter                                                             // 클래스 내 모든필드에 get메소드 생성
-@NoArgsConstructor                                                  // 기본생성자 추가 >> public Posts(){}
+@NoArgsConstructor                                                  // 파라미터가 없는 기본생성자 추가 >> public Posts(){}
 @Entity                                                             // JPA 어노테이션
 public class Posts {                                                // DB에 매칭될 클래스
 
@@ -28,6 +28,11 @@ public class Posts {                                                // DB에 매
         this.title = title;
         this.content = content;
         this.author = author;
+    }
+
+    public void update(String title, String content){
+        this.title = title;
+        this.content = content;
     }
 
 
