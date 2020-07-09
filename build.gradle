@@ -1,0 +1,35 @@
+/* 이 프로젝트의 플러그인 의존성 관리 설정*/
+buildscript {
+    ext {                                       //build.gradle에서 사용할 전역변수 설정
+        springBootVersion = '2.1.9.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+/* 플러그인들의 의존성 적용 */
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'     // 스프링 부트의 의존성 관리해줌
+
+group 'org.Springboot.React.MongoDB'
+version '1.0-SNAPSHOT'
+
+/* 의존성 라이브러리들을 어떤 원격저장소에서 받을건지 정함 */
+repositories {
+    mavenCentral()
+    jcenter()           // 라이브러리 업로드가 간편함, mavenCentral에 업로드를 자동화 해줌
+}
+/* 개발에 필요한 의존성 선언*/
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+}
