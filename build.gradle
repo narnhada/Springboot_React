@@ -37,4 +37,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa') // jpa 구현체를 직접다루지 않고, spring data jpa를 이용
     compile('com.h2database:h2')                                     // 메모리에서 실행 > 재실행시 데이터 없어짐
 
+    //4
+    compile('org.springframework.boot:spring-boot-starter-mustache')
+
+
 }
