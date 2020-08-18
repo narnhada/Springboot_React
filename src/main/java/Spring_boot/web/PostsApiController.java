@@ -1,11 +1,14 @@
 package Spring_boot.web;
 
 import Spring_boot.service.posts.PostsService;
+import Spring_boot.web.dto.PostsListResponseDto;
 import Spring_boot.web.dto.PostsResponseDto;
 import Spring_boot.web.dto.PostsSaveRequestDto;
 import Spring_boot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor                            // final필드가 포함된 생성자를 생성
 @RestController                                     // 문자열, json을 반환하는 컨트롤러로 만들어줌
@@ -32,6 +35,12 @@ public class PostsApiController {
         postsService.delete(id);
 
         return id;
+    }
+
+    //새로 추가
+    @GetMapping("/api/v1/posts")
+    public List<PostsListResponseDto> _test() {
+        return postsService.findAllDesc();
     }
 
 

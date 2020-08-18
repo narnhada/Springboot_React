@@ -25,7 +25,7 @@ public class Posts extends BaseTimeEntity {                 // DB에 매칭될 �
     private String author;
 
     @Builder                                                        // setter의 역할
-    public Posts(String title,String content, String author){
+    public Posts(String title, String content, String author){
         this.title = title;
         this.content = content;
         this.author = author;
@@ -35,7 +35,4 @@ public class Posts extends BaseTimeEntity {                 // DB에 매칭될 �
         this.title = title;
         this.content = content;
     }
-
-
-
 }
